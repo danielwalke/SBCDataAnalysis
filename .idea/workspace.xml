@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="875a38dc-bf1f-4839-9933-7efb22d78c92" name="Changes" comment="test change" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HDnglcop5GQDayUKRfOVhFEVLs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;K:/PycharmProjects/Neo4J&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\PycharmProjects\sbc" />
+      <recent name="C:\Users\danie\PycharmProjects\sbc\extdata" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\PycharmProjects\sbc\dataAnalysis" />
+      <recent name="C:\Users\danie\PycharmProjects\sbc\dataAnalysis\patientData\bloodValues" />
+      <recent name="C:\Users\danie\PycharmProjects\sbc\dataAnalysis\patientData" />
+      <recent name="C:\Users\danie\PycharmProjects\sbc\dataAnalysis\bloodValues" />
+      <recent name="C:\Users\danie\PycharmProjects\sbc\extdata" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="DataAnalysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sbcAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataAnalysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataAnalysis/DataAnalysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Sex" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sbcAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataAnalysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\danie\PycharmProjects\sbc\dataAnalysis\patientData\Sex.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGnn" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sbc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hgnn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hgnn/TestGnn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="sbc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="sbc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sbc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sbc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataAnalysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataAnalysis/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.TestGnn" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.DataAnalysis" />
+      <item itemvalue="Python.Sex" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.TestGnn" />
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.DataAnalysis" />
+        <item itemvalue="Python.Sex" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="875a38dc-bf1f-4839-9933-7efb22d78c92" name="Changes" comment="" />
+      <created>1667828634516</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667828634516</updated>
+      <workItem from="1667828638834" duration="4084000" />
+      <workItem from="1667887362849" duration="22632000" />
+      <workItem from="1667974871000" duration="18587000" />
+      <workItem from="1668420000811" duration="5505000" />
+      <workItem from="1669301590368" duration="526000" />
+      <workItem from="1669360095972" duration="13655000" />
+      <workItem from="1669614940975" duration="6055000" />
+      <workItem from="1669702055052" duration="11190000" />
+      <workItem from="1669875460603" duration="6235000" />
+      <workItem from="1669960875344" duration="6244000" />
+      <workItem from="1670220510380" duration="19259000" />
+      <workItem from="1670310407749" duration="1869000" />
+      <workItem from="1670315158184" duration="656000" />
+      <workItem from="1670388494005" duration="600000" />
+      <workItem from="1670480069586" duration="7471000" />
+      <workItem from="1670568356906" duration="1934000" />
+      <workItem from="1670600897249" duration="2413000" />
+      <workItem from="1670818279021" duration="8821000" />
+      <workItem from="1672635473840" duration="29433000" />
+      <workItem from="1672721330358" duration="26872000" />
+      <workItem from="1672815775861" duration="93000" />
+      <workItem from="1672815879033" duration="896000" />
+      <workItem from="1672831002685" duration="4728000" />
+      <workItem from="1672896338895" duration="20670000" />
+      <workItem from="1673239885483" duration="8710000" />
+      <workItem from="1673257467629" duration="11497000" />
+      <workItem from="1673331349019" duration="20739000" />
+      <workItem from="1673428448005" duration="824000" />
+      <workItem from="1673429558299" duration="9232000" />
+      <workItem from="1673503967089" duration="9036000" />
+      <workItem from="1673588895053" duration="13195000" />
+      <workItem from="1673844801384" duration="3516000" />
+      <workItem from="1673849406709" duration="58505000" />
+      <workItem from="1674191625730" duration="597000" />
+      <workItem from="1674468887279" duration="5864000" />
+      <workItem from="1674537996437" duration="6264000" />
+      <workItem from="1674570127956" duration="476000" />
+      <workItem from="1674624323088" duration="8806000" />
+      <workItem from="1674717893457" duration="3030000" />
+    </task>
+    <task id="LOCAL-00109" summary="trial for gnn training ii">
+      <created>1673878981076</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1673878981076</updated>
+    </task>
+    <task id="LOCAL-00110" summary="trial for gnn training iii">
+      <created>1673879731481</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1673879731481</updated>
+    </task>
+    <task id="LOCAL-00111" summary="reduced dataset size (playground)">
+      <created>1674108873470</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1674108873470</updated>
+    </task>
+    <task id="LOCAL-00112" summary="minor bug">
+      <created>1674109165194</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1674109165194</updated>
+    </task>
+    <task id="LOCAL-00113" summary="changed model">
+      <created>1674109774067</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1674109774067</updated>
+    </task>
+    <task id="LOCAL-00114" summary="changed model ii">
+      <created>1674109927134</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1674109927134</updated>
+    </task>
+    <task id="LOCAL-00115" summary="changed model iii">
+      <created>1674110485285</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1674110485285</updated>
+    </task>
+    <task id="LOCAL-00116" summary="changed model iii">
+      <created>1674110647590</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1674110647590</updated>
+    </task>
+    <task id="LOCAL-00117" summary="fixed?">
+      <created>1674110705652</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1674110705652</updated>
+    </task>
+    <task id="LOCAL-00118" summary="prints">
+      <created>1674110786572</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1674110786572</updated>
+    </task>
+    <task id="LOCAL-00119" summary="prints">
+      <created>1674110862311</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1674110862311</updated>
+    </task>
+    <task id="LOCAL-00120" summary="prints">
+      <created>1674111017822</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111017822</updated>
+    </task>
+    <task id="LOCAL-00121" summary="prints + fix">
+      <created>1674111110644</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111110644</updated>
+    </task>
+    <task id="LOCAL-00122" summary="removed prints">
+      <created>1674111158960</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111158960</updated>
+    </task>
+    <task id="LOCAL-00123" summary="removed prints">
+      <created>1674111349342</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111349342</updated>
+    </task>
+    <task id="LOCAL-00124" summary="removed prints">
+      <created>1674111373317</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111373317</updated>
+    </task>
+    <task id="LOCAL-00125" summary="rounded values and long dtype">
+      <created>1674111581001</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111581001</updated>
+    </task>
+    <task id="LOCAL-00126" summary="rounded values and int dtype">
+      <created>1674111841877</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111841877</updated>
+    </task>
+    <task id="LOCAL-00127" summary="removed most features">
+      <created>1674111959670</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1674111959670</updated>
+    </task>
+    <task id="LOCAL-00128" summary="changed model">
+      <created>1674112103392</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112103392</updated>
+    </task>
+    <task id="LOCAL-00129" summary="changed model">
+      <created>1674112142432</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112142432</updated>
+    </task>
+    <task id="LOCAL-00130" summary="changed model">
+      <created>1674112176347</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112176347</updated>
+    </task>
+    <task id="LOCAL-00131" summary="changed model">
+      <created>1674112197376</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112197376</updated>
+    </task>
+    <task id="LOCAL-00132" summary="changed model">
+      <created>1674112244514</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112244514</updated>
+    </task>
+    <task id="LOCAL-00133" summary="changed model">
+      <created>1674112328299</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112328299</updated>
+    </task>
+    <task id="LOCAL-00134" summary="changed model">
+      <created>1674112377644</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112377644</updated>
+    </task>
+    <task id="LOCAL-00135" summary="changed model">
+      <created>1674112551779</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112551779</updated>
+    </task>
+    <task id="LOCAL-00136" summary="changed model">
+      <created>1674112734925</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112734925</updated>
+    </task>
+    <task id="LOCAL-00137" summary="changed model">
+      <created>1674112783428</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1674112783428</updated>
+    </task>
+    <task id="LOCAL-00138" summary="changed model">
+      <created>1674113741111</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1674113741111</updated>
+    </task>
+    <task id="LOCAL-00139" summary="concat instead of cat + long conversion after concat and reshape">
+      <created>1674118521841</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1674118521841</updated>
+    </task>
+    <task id="LOCAL-00140" summary="dict of graph">
+      <created>1674120190386</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1674120190386</updated>
+    </task>
+    <task id="LOCAL-00141" summary="transform (train val test split)">
+      <created>1674120344878</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1674120344878</updated>
+    </task>
+    <task id="LOCAL-00142" summary="test gnn in torch_geometric (doesnt work)">
+      <created>1674120576854</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1674120576854</updated>
+    </task>
+    <task id="LOCAL-00143" summary="working training example">
+      <created>1674134444425</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1674134444425</updated>
+    </task>
+    <task id="LOCAL-00144" summary="working training example with eval">
+      <created>1674134987000</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1674134987000</updated>
+    </task>
+    <task id="LOCAL-00145" summary="complete test dataset as training">
+      <created>1674137331156</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1674137331156</updated>
+    </task>
+    <task id="LOCAL-00146" summary="test graph in HGNN">
+      <created>1674566990076</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1674566990076</updated>
+    </task>
+    <task id="LOCAL-00147" summary="removed id frequency counter">
+      <created>1674567129008</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1674567129008</updated>
+    </task>
+    <task id="LOCAL-00148" summary="print splitted graph">
+      <created>1674567961984</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1674567961984</updated>
+    </task>
+    <task id="LOCAL-00149" summary="validation split">
+      <created>1674568777417</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1674568777417</updated>
+    </task>
+    <task id="LOCAL-00150" summary="fixed train graph">
+      <created>1674568826780</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1674568826780</updated>
+    </task>
+    <task id="LOCAL-00151" summary="fixed train graph">
+      <created>1674625737820</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1674625737820</updated>
+    </task>
+    <task id="LOCAL-00152" summary="softmax as activation">
+      <created>1674628057521</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1674628057521</updated>
+    </task>
+    <task id="LOCAL-00153" summary="removed softmax">
+      <created>1674629471403</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1674629471403</updated>
+    </task>
+    <task id="LOCAL-00154" summary="rus mask for training">
+      <created>1674643364555</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1674643364555</updated>
+    </task>
+    <task id="LOCAL-00155" summary="fix">
+      <created>1674645130276</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1674645130276</updated>
+    </task>
+    <task id="LOCAL-00156" summary="jupyter notebook for faster progression">
+      <created>1674719930538</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1674719930538</updated>
+    </task>
+    <task id="LOCAL-00157" summary="test change">
+      <created>1674723138556</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1674723138556</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="prints" />
+    <MESSAGE value="prints + fix" />
+    <MESSAGE value="removed prints" />
+    <MESSAGE value="rounded values and long dtype" />
+    <MESSAGE value="rounded values and int dtype" />
+    <MESSAGE value="removed most features" />
+    <MESSAGE value="changed model" />
+    <MESSAGE value="concat instead of cat + long conversion after concat and reshape" />
+    <MESSAGE value="dict of graph" />
+    <MESSAGE value="transform (train val test split)" />
+    <MESSAGE value="test gnn in torch_geometric (doesnt work)" />
+    <MESSAGE value="working training example" />
+    <MESSAGE value="working training example with eval" />
+    <MESSAGE value="complete test dataset as training" />
+    <MESSAGE value="test graph in HGNN" />
+    <MESSAGE value="removed id frequency counter" />
+    <MESSAGE value="print splitted graph" />
+    <MESSAGE value="validation split" />
+    <MESSAGE value="fixed train graph" />
+    <MESSAGE value="softmax as activation" />
+    <MESSAGE value="removed softmax" />
+    <MESSAGE value="rus mask for training" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="jupyter notebook for faster progression" />
+    <MESSAGE value="test change" />
+    <option name="LAST_COMMIT_MESSAGE" value="test change" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sbc$TestGnn.coverage" NAME="TestGnn Coverage Results" MODIFIED="1674118030432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hgnn" />
+    <SUITE FILE_PATH="coverage/sbc$main.coverage" NAME="main Coverage Results" MODIFIED="1674643316453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sbcAnalysis$main.coverage" NAME="main Coverage Results" MODIFIED="1667914124922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sbcAnalysis$Sex.coverage" NAME="Sex Coverage Results" MODIFIED="1667894032462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataAnalysis" />
+    <SUITE FILE_PATH="coverage/sbcAnalysis$DataAnalysis.coverage" NAME="DataAnalysis Coverage Results" MODIFIED="1667910271537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataAnalysis" />
+  </component>
+</project>
