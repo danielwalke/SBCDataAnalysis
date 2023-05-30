@@ -65,16 +65,23 @@ class FeatureImportance:
                 sepsis_ratios.append(torch.tensor(0) if only_class_is_control else torch.tensor(1))     
         sepsis_ratios = list(map(lambda r: r*100, sepsis_ratios))
         return sepsis_ratios
+    
+    
+    def get_sex_feature_information(self, sepsis_ratios, title = "unknown model"):
+        men_diseased_ratio = sepsis_ratios[0]
+        women_diseased_ratio = sepsis_ratios[1]
+        return f"Ratio of diseased men/women over all CBCs for {title} {str(men_diseased_ratio)}\t{str(women_diseased_ratio)}" 
 
 
     def plot_feature_importance(self, model, title = None):
         y_pred_log = model.predict(*self.model_input)
-        y_pred_log = y_pred_log.cpu()
+        y_pred_log =  y_pred_log.cpu() if torch.is_tensor(y_pred_log) else y_pred_log
         feature_sepsis_ratios= []
         sepsis_ratios_stds= []
         for idx, feature in enumerate(FEATURES):
             sepsis_ratios = self.get_sepsis_ratios(feature, y_pred_log)
             if feature == SEX_CATEGORY_COLUMN_NAME:
+                print(self.get_sex_feature_information(sepsis_ratios, title))
                 continue
 #                 diff = sepsis_ratios[1] - sepsis_ratios[0]
 #                 sepsis_ratios = [sepsis_ratios[0] + i/STEPS * diff for i in range(STEPS)]   

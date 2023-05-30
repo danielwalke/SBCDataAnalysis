@@ -66,7 +66,7 @@ class Evaluation:
     @staticmethod
     def plot_confusion_matrix_from_pred(y_pred, y_test):
         confusion_matrix = metrics.confusion_matrix(y_test, y_pred)
-        cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix=confusion_matrix, display_labels=[False, True])
+        cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix=confusion_matrix, display_labels=["Control", "Sepsis"])
         cm_display.plot()
         
     @staticmethod
