@@ -22,9 +22,7 @@ class Filter:
         non_icu_unique_data = unique_data.query("~(Sender.str.contains('ICU')) & ~(~SecToIcu.isnull() & SecToIcu < 0)",
                                                 engine='python')
         first_non_icu_unique_data = non_icu_unique_data.query("Episode == 1 ", engine='python')
-        complete_first_non_icu_unique_data = first_non_icu_unique_data.query("~(WBC.isnull() | HGB.isnull() | "
-                                                                             "MCV.isnull() | PLT.isnull() | "
-                                                                             "RBC.isnull())", engine='python')
+        complete_first_non_icu_unique_data = first_non_icu_unique_data.query("~(" + " | ".join([i + ".isnull()" for i in FEATURES_IN_TABLE]) +")", engine='python') ## filters all rows with an empty feature value
         sirs_complete_first_non_icu_unique_data = complete_first_non_icu_unique_data.query("Diagnosis != 'SIRS'",
                                                                                            engine='python')
         sirs_complete_first_non_icu_unique_data = \

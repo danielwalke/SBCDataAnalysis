@@ -82,15 +82,21 @@ class FeatureImportance:
             sepsis_ratios = self.get_sepsis_ratios(feature, y_pred_log)
             if feature == SEX_CATEGORY_COLUMN_NAME:
                 print(self.get_sex_feature_information(sepsis_ratios, title))
-                continue
-#                 diff = sepsis_ratios[1] - sepsis_ratios[0]
-#                 sepsis_ratios = [sepsis_ratios[0] + i/STEPS * diff for i in range(STEPS)]   
+#                 continue
+                diff = sepsis_ratios[1] - sepsis_ratios[0]
+                sepsis_ratios = [sepsis_ratios[0] + i/STEPS * diff for i in range(STEPS)]   
             sepsis_ratios_stds.append(np.std(sepsis_ratios))
             feature_sepsis_ratios.append(sepsis_ratios)
             
         summed_sepsis_ratios = sum(sepsis_ratios_stds)
+        feature_variation_df_list = [np.linspace(0, 100, STEPS, endpoint=True)]
+        columns = ["Feature variation"]
         for idx, sepsis_ratios in enumerate(feature_sepsis_ratios):
+            feature_variation_df_list.append(sepsis_ratios)
+            columns.append(f"{FEATURES[idx]} ({str(round(sepsis_ratios_stds[idx]/summed_sepsis_ratios, 2))})")
             plt.plot(np.linspace(0, 100, STEPS, endpoint=True), sepsis_ratios, linewidth=sepsis_ratios_stds[idx]*5/summed_sepsis_ratios)
+        feature_variation_df = pd.DataFrame(data = np.transpose(np.asarray(feature_variation_df_list)), columns = columns)
+        feature_variation_df.to_csv(f"{title}.csv")
         plt.xlabel("Feature ratio [%]")
         plt.ylabel("Ratios of diseased patients [%]")
         plt.ylim(0, 100)
