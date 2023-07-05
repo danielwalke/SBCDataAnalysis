@@ -2,6 +2,7 @@ from dataAnalysis.data.Training import Training
 from dataAnalysis.data.Validation import Validation
 import pandas as pd
 from dataAnalysis.data.Greifswald_Validation import GreifswaldValidation
+from dataAnalysis.data.MIMIC import MIMIC
 import numpy as np
 from dataAnalysis.scorer.AUROC import area_under_curve
 
@@ -20,7 +21,11 @@ def count_cbc(data):
 
 
 class DataAnalysis:
-    def __init__(self, data):
+    def __init__(self, data=None, mimic_data = None):
+        if mimic_data is not None:
+            self.mimic = MIMIC(mimic_data)
+        if data is None:
+            return
         self.training = Training(data)
         print("Training: ")
         print(f"Assessable data are {count_cbc_cases(self.training.get_data())} cases "
@@ -50,6 +55,7 @@ class DataAnalysis:
               f"and {count_cbc(self.greifswald_vaidation.get_control_data())} CBCs")
         print(f"Sepsis data are {count_cbc_cases(self.greifswald_vaidation.get_sepsis_data())} cases "
               f"and {count_cbc(self.greifswald_vaidation.get_sepsis_data())} CBCs")
+        
     
     def get_training_data(self):
         return self.training.get_data()
@@ -77,3 +83,13 @@ class DataAnalysis:
     
     def get_y_gw(self):
         return self.greifswald_vaidation.get_y()
+    
+    def get_X_mimic(self):
+        return self.mimic.get_X()
+    
+    def get_y_mimic(self):
+        return self.mimic.get_y()
+    
+    
+    def get_mimic_data(self):
+        return self.mimic.get_data()

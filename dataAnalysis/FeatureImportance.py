@@ -17,18 +17,20 @@ def normalize(tensor):
     return mean_diff / std
 
 class FeatureImportance:
-    def __init__(self, X_train, is_normalize=False):
+    def __init__(self, X_train, is_normalize=False, steps = STEPS):
         self.X_train = X_train
-        if (STEPS == 20 and not exists(VARIATION_DF)) or (STEPS != 20 and not exists(VARIATION_SMALL_DF)):
+        if (steps == 20 and not exists(VARIATION_DF)) or (steps != 20 and not exists(VARIATION_SMALL_DF)):
                 self.write_features_multi_variation()
-        self.X_all_fv = pd.read_csv(VARIATION_DF if STEPS == 20 else VARIATION_SMALL_DF, header=0).to_numpy()[:,1:]
+        self.X_all_fv = pd.read_csv(VARIATION_DF if steps == 20 else VARIATION_SMALL_DF, header=0).to_numpy()[:,1:]
         if is_normalize:
             self.X_all_fv = normalize(self.X_all_fv)
         self.model_input = [self.X_all_fv]
+        self.steps = steps
         
     def feature_variation(self, feature_column):
         feature_column =  feature_column if torch.is_tensor(feature_column) else torch.from_numpy(feature_column)
-        q = np.linspace(0, 1, STEPS, endpoint=True)
+        q = np.linspace(0, 1, self.steps, endpoint=True)
+        # several features have outliers which makes the distribution distrorted, thats why we are using quantiles to check the prediction based on abundance rather than absolute values
         return np.quantile(feature_column, q)
     
     def set_model_input(self, model_input):
@@ -50,7 +52,7 @@ class FeatureImportance:
         tensor_with_female_column = torch.cat((combinations_wo_sex[:, :1], torch.ones(combinations_wo_sex.shape[0]).unsqueeze(1), combinations_wo_sex[:, 1:]), dim=1)
         concatenated_tensor = torch.cat((tensor_with_male_column, tensor_with_female_column), dim=0)
         variation_df = pd.DataFrame(data = concatenated_tensor.numpy(), columns= FEATURES)
-        variation_df.to_csv(VARIATION_DF if STEPS == 20 else VARIATION_SMALL_DF)
+        variation_df.to_csv(VARIATION_DF if self.steps == 20 else VARIATION_SMALL_DF)
     
     def get_sepsis_ratios(self, feature, y_pred_log):
         sepsis_ratios = []
@@ -84,17 +86,17 @@ class FeatureImportance:
                 print(self.get_sex_feature_information(sepsis_ratios, title))
 #                 continue
                 diff = sepsis_ratios[1] - sepsis_ratios[0]
-                sepsis_ratios = [sepsis_ratios[0] + i/STEPS * diff for i in range(STEPS)]   
+                sepsis_ratios = [sepsis_ratios[0] + i/self.steps * diff for i in range(self.steps)]   
             sepsis_ratios_stds.append(np.std(sepsis_ratios))
             feature_sepsis_ratios.append(sepsis_ratios)
             
         summed_sepsis_ratios = sum(sepsis_ratios_stds)
-        feature_variation_df_list = [np.linspace(0, 100, STEPS, endpoint=True)]
+        feature_variation_df_list = [np.linspace(0, 100, self.steps, endpoint=True)]
         columns = ["Feature variation"]
         for idx, sepsis_ratios in enumerate(feature_sepsis_ratios):
             feature_variation_df_list.append(sepsis_ratios)
             columns.append(f"{FEATURES[idx]} ({str(round(sepsis_ratios_stds[idx]/summed_sepsis_ratios, 2))})")
-            plt.plot(np.linspace(0, 100, STEPS, endpoint=True), sepsis_ratios, linewidth=sepsis_ratios_stds[idx]*5/summed_sepsis_ratios)
+            plt.plot(np.linspace(0, 100, self.steps, endpoint=True), sepsis_ratios, linewidth=sepsis_ratios_stds[idx]*5/summed_sepsis_ratios)
         feature_variation_df = pd.DataFrame(data = np.transpose(np.asarray(feature_variation_df_list)), columns = columns)
         feature_variation_df.to_csv(f"{title}.csv")
         plt.xlabel("Feature ratio [%]")
