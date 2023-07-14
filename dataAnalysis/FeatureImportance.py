@@ -75,7 +75,7 @@ class FeatureImportance:
         return f"Ratio of diseased men/women over all CBCs for {title} {str(men_diseased_ratio)}\t{str(women_diseased_ratio)}" 
 
 
-    def plot_feature_importance(self, model, title = None):
+    def plot_feature_importance(self, model, title = None, write = True):
         y_pred_log = model.predict(*self.model_input)
         y_pred_log =  y_pred_log.cpu() if torch.is_tensor(y_pred_log) else y_pred_log
         feature_sepsis_ratios= []
@@ -89,21 +89,25 @@ class FeatureImportance:
                 sepsis_ratios = [sepsis_ratios[0] + i/self.steps * diff for i in range(self.steps)]   
             sepsis_ratios_stds.append(np.std(sepsis_ratios))
             feature_sepsis_ratios.append(sepsis_ratios)
-            
         summed_sepsis_ratios = sum(sepsis_ratios_stds)
         feature_variation_df_list = [np.linspace(0, 100, self.steps, endpoint=True)]
         columns = ["Feature variation"]
+        legend = []
         for idx, sepsis_ratios in enumerate(feature_sepsis_ratios):
             feature_variation_df_list.append(sepsis_ratios)
-            columns.append(f"{FEATURES[idx]} ({str(round(sepsis_ratios_stds[idx]/summed_sepsis_ratios, 2))})")
-            plt.plot(np.linspace(0, 100, self.steps, endpoint=True), sepsis_ratios, linewidth=sepsis_ratios_stds[idx]*5/summed_sepsis_ratios)
-        feature_variation_df = pd.DataFrame(data = np.transpose(np.asarray(feature_variation_df_list)), columns = columns)
-        feature_variation_df.to_csv(f"{title}.csv")
+            feature_descript = f"{FEATURES[idx]} ({str(round(sepsis_ratios_stds[idx]/summed_sepsis_ratios, 2))})"
+            if FEATURES[idx] != SEX_CATEGORY_COLUMN_NAME:
+                legend.append(feature_descript)
+                plt.plot(np.linspace(0, 100, self.steps, endpoint=True), sepsis_ratios)
+            columns.append(feature_descript)
+        if write:
+            feature_variation_df = pd.DataFrame(data = np.transpose(np.asarray(feature_variation_df_list)), columns = columns)
+            feature_variation_df.to_csv(f"{title}.csv")
         plt.xlabel("Feature ratio [%]")
-        plt.ylabel("Ratios of diseased patients [%]")
+        plt.ylabel("Ratio of Sepsis CBC [%]")
         plt.ylim(0, 100)
         plt.xlim(0, 100)
         plt.title(title)
         plt.grid()
-        plt.legend(list(filter(lambda f: f != SEX_CATEGORY_COLUMN_NAME, FEATURES)))
+        plt.legend(legend)
         plt.show()
