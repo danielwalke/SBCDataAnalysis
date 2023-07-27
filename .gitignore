@@ -2,3 +2,4 @@ extdata
 variation.csv
 variation_small.csv
 *.csv
+*.pt

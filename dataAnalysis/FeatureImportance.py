@@ -19,13 +19,14 @@ def normalize(tensor):
 class FeatureImportance:
     def __init__(self, X_train, is_normalize=False, steps = STEPS):
         self.X_train = X_train
-        if (steps == 20 and not exists(VARIATION_DF)) or (steps != 20 and not exists(VARIATION_SMALL_DF)):
-                self.write_features_multi_variation()
+        
         self.X_all_fv = pd.read_csv(VARIATION_DF if steps == 20 else VARIATION_SMALL_DF, header=0).to_numpy()[:,1:]
         if is_normalize:
             self.X_all_fv = normalize(self.X_all_fv)
         self.model_input = [self.X_all_fv]
         self.steps = steps
+        if (steps == 20 and not exists(VARIATION_DF)) or (steps != 20 and not exists(VARIATION_SMALL_DF)):
+            self.write_features_multi_variation()
         
     def feature_variation(self, feature_column):
         feature_column =  feature_column if torch.is_tensor(feature_column) else torch.from_numpy(feature_column)

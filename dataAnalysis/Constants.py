@@ -12,6 +12,7 @@ PATIENT_NAME = "PATIENT"
 EDGE_TYPE = "HAS"
 REV_EDGE_TYPE = "rev_HAS"
 
+
 VARIATION_DF = "variation.csv"
 VARIATION_SMALL_DF = "variation_small.csv"
 
