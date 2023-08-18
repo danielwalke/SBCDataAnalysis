@@ -21,40 +21,44 @@ def count_cbc(data):
 
 
 class DataAnalysis:
-    def __init__(self, data=None, mimic_data = None):
+    def __init__(self, data=None, print_logs = False, mimic_data = None):
         if mimic_data is not None:
             self.mimic = MIMIC(mimic_data)
         if data is None:
             return
         self.training = Training(data)
-        print("Training: ")
-        print(f"Assessable data are {count_cbc_cases(self.training.get_data())} cases "
-              f"and {count_cbc(self.training.get_data())} CBCs")
-        print(f"Control data are {count_cbc_cases(self.training.get_control_data())} cases "
-              f"and {count_cbc(self.training.get_control_data())} CBCs")
-        print(f"Sepsis data are {count_cbc_cases(self.training.get_sepsis_data())} cases "
-              f"and {count_cbc(self.training.get_sepsis_data())} CBCs")
-        print(20 * "$")
-        print("Testing: ")
+        if print_logs: 
+            print("Training: ")
+            print(f"Assessable data are {count_cbc_cases(self.training.get_data())} cases "
+                  f"and {count_cbc(self.training.get_data())} CBCs")
+            print(f"Control data are {count_cbc_cases(self.training.get_control_data())} cases "
+                  f"and {count_cbc(self.training.get_control_data())} CBCs")
+            print(f"Sepsis data are {count_cbc_cases(self.training.get_sepsis_data())} cases "
+                  f"and {count_cbc(self.training.get_sepsis_data())} CBCs")
+            
         self.validation = Validation(data)
-        print(f"Controls: {self.validation.get_control_data().shape[0]},"
-              f" Sepsis: {self.validation.get_sepsis_data().shape[0]}")
-        print(f"Assessable data are {count_cbc_cases(self.validation.get_data())} cases "
-              f"and {count_cbc(self.validation.get_data())} CBCs")
-        print(f"Control data are {count_cbc_cases(self.validation.get_control_data())} cases "
-              f"and {count_cbc(self.validation.get_control_data())} CBCs")
-        print(f"Sepsis data are {count_cbc_cases(self.validation.get_sepsis_data())} cases "
-              f"and {count_cbc(self.validation.get_sepsis_data())} CBCs")
+        if print_logs:
+            print(20 * "$")
+            print("Testing: ")
+            print(f"Controls: {self.validation.get_control_data().shape[0]},"
+                  f" Sepsis: {self.validation.get_sepsis_data().shape[0]}")
+            print(f"Assessable data are {count_cbc_cases(self.validation.get_data())} cases "
+                  f"and {count_cbc(self.validation.get_data())} CBCs")
+            print(f"Control data are {count_cbc_cases(self.validation.get_control_data())} cases "
+                  f"and {count_cbc(self.validation.get_control_data())} CBCs")
+            print(f"Sepsis data are {count_cbc_cases(self.validation.get_sepsis_data())} cases "
+                  f"and {count_cbc(self.validation.get_sepsis_data())} CBCs")
 
         self.greifswald_vaidation = GreifswaldValidation(data)
-        print(f"Controls: {self.greifswald_vaidation.get_control_data().shape[0]},"
+        if print_logs:
+            print(f"Controls: {self.greifswald_vaidation.get_control_data().shape[0]},"
               f" Sepsis: {self.greifswald_vaidation.get_sepsis_data().shape[0]}")
-        print(f"Assessable data are {count_cbc_cases(self.greifswald_vaidation.get_data())} cases "
-              f"and {count_cbc(self.greifswald_vaidation.get_data())} CBCs")
-        print(f"Control data are {count_cbc_cases(self.validation.get_control_data())} cases "
-              f"and {count_cbc(self.greifswald_vaidation.get_control_data())} CBCs")
-        print(f"Sepsis data are {count_cbc_cases(self.greifswald_vaidation.get_sepsis_data())} cases "
-              f"and {count_cbc(self.greifswald_vaidation.get_sepsis_data())} CBCs")
+            print(f"Assessable data are {count_cbc_cases(self.greifswald_vaidation.get_data())} cases "
+                  f"and {count_cbc(self.greifswald_vaidation.get_data())} CBCs")
+            print(f"Control data are {count_cbc_cases(self.validation.get_control_data())} cases "
+                  f"and {count_cbc(self.greifswald_vaidation.get_control_data())} CBCs")
+            print(f"Sepsis data are {count_cbc_cases(self.greifswald_vaidation.get_sepsis_data())} cases "
+                  f"and {count_cbc(self.greifswald_vaidation.get_sepsis_data())} CBCs")
         
     
     def get_training_data(self):
