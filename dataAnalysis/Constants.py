@@ -13,8 +13,8 @@ EDGE_TYPE = "HAS"
 REV_EDGE_TYPE = "rev_HAS"
 
 
-VARIATION_DF = "variation.csv"
-VARIATION_SMALL_DF = "variation_small.csv"
+VARIATION_DF = "../feature_variation/variation.csv"
+VARIATION_SMALL_DF = "../feature_variation/variation_small.csv"
 
 STEPS = 20 # for HetGNN 14 to reduce computational complexity; otherwise 20
 
