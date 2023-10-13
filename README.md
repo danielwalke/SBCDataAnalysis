@@ -64,7 +64,7 @@ daniel.walke@ovgu.de
 <a name="fundings"/>
 
 ## 4. Fundings
-This work was supported by the German Federal Ministry of Education and Research (de.NBI network. project MetaProtServ. grant no. 031L0103). We highly appreciate their funding.
+This research was funded by the German Research Foundation (DFG) under the project ‘Optimizing graph databases focusing on data processing and integration of machine learning for large clinical and biological datasets’ [grant numbers HE 8077/2-1, SA 465/53-1]).
 
 
 <a name="competingIntrests"/>
