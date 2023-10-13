@@ -39,6 +39,9 @@ Note: We have used Conda version 11.7 with the following hardware setup:
 •	RAM: 8x32 GB DDR4-3200
 •	ROM: 2TB Samsung SSD 980 PRO, M.2  
 
+If you have any issues or problems in reproducing, do not hesitate to create an Issue or directly contact me using the following e-mail:
+daniel.walke@ovgu.de
+
 <a name="fundings"/>
 
 ## 3. Fundings
