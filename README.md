@@ -5,8 +5,9 @@
 |---------------------------------|
 |[1. Abstract](#overview)     |
 |[2. Installation](#installation) |
-|[3. Fundings](#fundings)           |
-|[4. Competing intrests](#competingIntrests) |
+|[3. Description](#description) |
+|[4. Fundings](#fundings)           |
+|[5. Competing intrests](#competingIntrests) |
 
 <a name="overview"/>
 
@@ -42,13 +43,31 @@ Note: We have used Conda version 11.7 with the following hardware setup:
 If you have any issues or problems in reproducing, do not hesitate to create an Issue or directly contact me using the following e-mail:
 daniel.walke@ovgu.de
 
+<a name="description"/>
+
+## 2. Description
+I have created multiple directories each containing different parts relevant for the SBC analysis
+
+1) extdata - containing the original dataset from Steinbach et al. (https://github.com/ampel-leipzig/sbcdata/tree/main)
+2) dataAnalysis - Contains all python scripts for pre-processing the data (reading, filtering and transforming the data) (DataAnalysis.py) and some scripts for metric evaluations (Metrics.py) and constructing feature importance and slope (FeatureImportance.py)
+3) noise - contains scripts for writing noisy features to the original dataset
+4) machine_learning - contains all jupyter notebooks for analyzing the dataset using machine learning algorithms (logistic regression, decision tree, random forest, XGBoost, RUSBoost) and creates/writes the feature variation graphs
+5) neural_network - contains the jupyter notebook for analyzing the dataset using the proposed neural network
+6) graph_learning - contains all jupyter notebooks for analyzing the dataset as similarity graphs (heterogeneous & homogeneous) and as patient-centric graphs (patient_centric) using graph learning and evaluations for the resulting attention scores
+7) feature_variation - contains jupyter notebooks for writing feature variation graphs for the graph learning algorithms and the neural network and the jupyter notebook for visualizing all graphs for each algorithm in feature variation graphs
+8) cuda_test - checks the cuda version and availability
+9) keep_ssh - to ensure that the ssh tunnel does not break for a defined inactive period 
+
+If you have any questions regarding the structure or specific implementation details, do not hesitate to contact me using the following e-mail:
+daniel.walke@ovgu.de
+
 <a name="fundings"/>
 
-## 3. Fundings
+## 4. Fundings
 This work was supported by the German Federal Ministry of Education and Research (de.NBI network. project MetaProtServ. grant no. 031L0103). We highly appreciate their funding.
 
 
 <a name="competingIntrests"/>
 
-## 4. Competing intrests
+## 5. Competing interests
 The authors declare that they have no competing interests.
