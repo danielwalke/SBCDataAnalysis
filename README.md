@@ -4,10 +4,11 @@
 |content                          |
 |---------------------------------|
 |[1. Abstract](#overview)     |
-|[2. Installation](#installation) |
-|[3. Description](#description) |
-|[4. Fundings](#fundings)           |
-|[5. Competing intrests](#competingIntrests) |
+|[2. Publication](#publication)     |
+|[3. Installation](#installation) |
+|[4. Description](#description) |
+|[5. Fundings](#fundings)           |
+|[6. Competing intrests](#competingIntrests) |
 
 <a name="overview"/>
 
@@ -21,9 +22,14 @@ and what limitations this new technology has exemplified on the classification o
 as septic or not. Finally, we reveal the underlying mechanisms of Graph Neural Networks and current AI
 approaches for the prediction.
 
+<a name="publication"/>
+
+## 2. Publication
+The link to the publication will be added as soon as the manuscript is accepted.
+
 <a name="installation"/>
 
-## 2. Installation
+## 3. Installation
 1) Unzip the CSV in extdata
 2) Install packages using conda:
    ```bash
@@ -45,7 +51,7 @@ daniel.walke@ovgu.de
 
 <a name="description"/>
 
-## 2. Description
+## 4. Description
 I have created multiple directories each containing different parts relevant for the SBC analysis
 
 1) extdata - containing the original dataset from Steinbach et al. (https://github.com/ampel-leipzig/sbcdata/tree/main)
@@ -63,11 +69,11 @@ daniel.walke@ovgu.de
 
 <a name="fundings"/>
 
-## 4. Fundings
+## 5. Fundings
 This research was funded by the German Research Foundation (DFG) under the project ‘Optimizing graph databases focusing on data processing and integration of machine learning for large clinical and biological datasets’ [grant numbers HE 8077/2-1, SA 465/53-1]).
 
 
 <a name="competingIntrests"/>
 
-## 5. Competing interests
+## 6. Competing interests
 The authors declare that they have no competing interests.
