@@ -9,6 +9,7 @@
 |[4. Competing intrests](#competingIntrests) |
 
 <a name="overview"/>
+
 ## 1. Abstract
 Artificial intelligence (AI) is currently revolutionizing countless domains in our
 daily lives. In many domains like medicine data required for building AI is interconnected (e.g., sequential
@@ -20,6 +21,7 @@ as septic or not. Finally, we reveal the underlying mechanisms of Graph Neural N
 approaches for the prediction.
 
 <a name="installation"/>
+
 ## 2. Installation
 
 <a name="fundings"/>
