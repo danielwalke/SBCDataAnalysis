@@ -23,6 +23,21 @@ approaches for the prediction.
 <a name="installation"/>
 
 ## 2. Installation
+1) Unzip the CSV in extdata
+2) Install packages using conda:
+   ```bash
+   conda create -n myenv --file package-list.txt
+   ```
+3) Some packages were easier to install using pip (e.g., sklearn), so why those are included in the requirements.txt. Install them using
+   ```bash
+   pip install -r requirements.txt
+   ```
+Note: We have used Conda version 11.7 with the following hardware setup:
+•	Mainboard Supermicro X12SPA-TF
+•	CPU: Intel® Xeon® Scalable Processor “Ice Lake” Gold 6338, 2.0 GHz, 32- Core
+•	GPU: NVIDIA® RTX A6000 (48 GB GDDR6)
+•	RAM: 8x32 GB DDR4-3200
+•	ROM: 2TB Samsung SSD 980 PRO, M.2  
 
 <a name="fundings"/>
 
