@@ -1,0 +1,241 @@
+This is the changelog for MIMIC-IV v2.2.
+
+
+=============
+MIMIC-IV v2.2
+=============
+
+MIMIC-IV v2.2 was released on January 5, 2023. It added provider identifiers, imputed hadm_id for a number of rows in emar, and changed the subset of subject_id which are held out. Final row counts are available in the validation scripts published with the MIMIC Code Repository. For clarity, after removal of the test set, the row counts are as follows:
+
+patients: 299,712 (was 315,460 in v2.0)
+admissions: 431,231 (was 454,324 in v2.0)
+icustays: 73,181 (was 76,943 in v2.0)
+
+=============
+MIMIC-IV v2.1
+=============
+
+MIMIC-IV v2.1 was released on November 16, 2022. It removed a subset of subject_id which will be retained internally as a test set. Future data releases will exclude these patients.
+
+Major changes
+-------------
+* A subset of patients were removed from the dataset. 15,748 subject_id were removed from the patients table. 23,093 hadm_id were removed from the admissions table. 3,762 stay_id were removed from the icustays table.
+
+=============
+MIMIC-IV v2.0
+=============
+
+MIMIC-IV v2.0 was released on June 12, 2022. It focused on expanding the data elements available for patients within MIMIC-IV v1.0. Additional data available includes out-of-hospital date of death, information from the online medical record system (which includes height and weight), and more detail for continuous infusions in the ICU.
+
+Major changes
+-------------
+
+* The core module has been removed to simplify the schema. The admissions, patients, and transfers tables are now in the hosp module.
+* Neonates have been removed from the dataset. Neonatal data will be released in a separate project with data from the neonatal intensive care unit.
+
+icu module
+----------
+
+icustays
+* Around 700 stays (~1%) have changed due to the changes in the patients table.
+
+chartevents, d_items
+* The problem list from MetaVision has been added. All problems are documented with the same itemid now present in d_items: 220001. There are just over 1,000 unique problems. Most documented problems are related to the care plan for the patient and documented during nurse shift changes (either 7am or 7pm). Less frequently, the ongoing issues are documented here.
+
+ingredientevents
+* This is a new table associated with inputevents. Each intravenous administration tracked in inputevents is associated with a set of ingredients. These ingredients include water content, caloric information, and so on. The goal of the inputevents table is to support nutrition research and to provide a mechanism for estimating fluid input via summing all instances of the water ingredient. These ingredients have been separated from the inputevents table to simplify analysis and reduce the size of inputevents.
+
+inputevents
+* Removed a single column which contained only null values: cancelreason.
+
+procedureevents
+* Removed columns which contained only null values: totalamount, totalamountuom, cancelreason, comments_editedby, comments_canceledby, comments_date, secondaryordercategoryname.
+
+
+hosp module
+-----------
+
+admissions
+* Fixed an issue where hospitalizations were missing edregtime and edouttime when the patient was admitted via the ED (reported in #1247, thanks @MEladawi).
+patients
+* dod is now populated with out-of-hospital mortality from state death records. For patients admitted to the ICU, this change has increased capture of date of death from 8,223 records to 23,844 (i.e. we now have out-of-hospital mortality for an additional 15,621 ICU patients).
+* The mechanism for determining patients included in MIMIC was changed. For the most part this has resulted in an improvement, particularly regarding the logic for merging patients who had distinct medical record numbers. As a result of this change, most tables have had a change in the data content. Approximately 1% of stays were affected.
+transfers
+* Fixed a bug where the outtime for ED stays with no associated hadm_id (i.e. an ED stay where the individual was not admitted to the hospital) was incorrect. This resulted in all transfers rows with a NULL hadm_id having an apparent stay of minutes or less. The outtime column has now been corrected.
+
+labevents, d_labitems
+* The itemid for d_labitems has been changed for 43 items. These are extremely infrequently documented and each itemid has fewer than 100 observations in labevents. The exact itemid are provided below.
+* Errors were found in the current values of loinc_code (reported in #938, thanks @Mauvila). In order to enable collaborative improvement, the loinc_code column has been removed, and will now be collaboratively developed in the MIMIC Code Repository. Initial values will be sourced from the hospital system.
+* A number of labs which previously had the value in the comments field now have the value in the value field (reported in #941, thanks @Mauvila). This change makes the labevents table more consistent with MIMIC-III, which had these values in the value field.
+
+microbiologyevents
+* New organisms, tests, specimens, and antibiotics have been added.
+
+omr
+* A new table has been added: omr. The source of this data is the Online Medical Record, and it contains miscellaneous information useful for understanding an individual's health. As of v2.0, the omr table has the following information: blood pressure, height, weight, body mass index, and Estimated Glomerular Filtration Rate (eGFR). These values are available from both inpatient and outpatient visits, and in many cases a "baseline" value from before a patient's hospitalization is available.
+
+prescriptions
+* The formulary_drug_cd table has been added back (was previously in MIMIC-III). This column has the same set of values as the product_code column of emar_detail.
+
+As mentioned above, 43 itemid have changed in d_labitems and labevents. These correspond to rarely collected laboratory values. The below tab delimited table provides the new itemid in MIMIC-IV v2.0 (far left), the label/category/fluid (shared for both itemid), and the original itemid in MIMIC-IV v1.0 (far right).
+
+The following itemid have been updated
+itemid	label	category	fluid	itemid_mimic_iv_v1
+53085	Albumin	Chemistry	Blood	50862
+53086	Alkaline Phosphatase	Chemistry	Blood	50863
+53087	Amylase	Chemistry	Blood	50867
+53089	"Bilirubin, Total"	Chemistry	Blood	50885
+53096	"Protein, Total"	Chemistry	Blood	50976
+53116	(Albumin)	Chemistry	Ascites	51520
+53117	Alpha-1	Chemistry	Ascites	51521
+53118	Alpha-2	Chemistry	Ascites	51522
+53119	Beta	Chemistry	Ascites	51523
+53120	Clostrid	Chemistry	Ascites	51524
+53121	Cryptococ	Chemistry	Ascites	51525
+53122	Fl Scan	Chemistry	Ascites	51526
+53123	"Immunoelectrophoresis, Ascites"	Chemistry	Ascites	51527
+53124	"Immunoglobulin G, Ascites"	Chemistry	Ascites	51528
+53125	"PEP, Ascites, Gamma Region"	Chemistry	Ascites	51529
+53126	"Uric Acid, Ascites"	Chemistry	Ascites	51530
+53127	Voided Specimen	Chemistry	Ascites	51531
+53128	11-Deoxycorticosterone	Chemistry	Blood	51532
+53129	3t	Chemistry	Blood	51533
+53130	4t	Chemistry	Blood	51534
+53131	5' Nucleotidase	Chemistry	Blood	51535
+53132	Absolute Lymphocyte Count	Chemistry	Blood	51536
+53133	Absolute Neutrophil	Chemistry	Blood	51537
+53134	Absolute Other WBC	Chemistry	Blood	51538
+53135	"Acid Phosphatase, Prostatic Fraction"	Chemistry	Blood	51539
+53136	Adrenocorticotrophic Hormone	Chemistry	Blood	51540
+53137	Afp Mom	Chemistry	Blood	51541
+53138	(Albumin)	Chemistry	Blood	51542
+53139	Aldosterone	Chemistry	Blood	51543
+53139	Aldosterone	Chemistry	Blood	51544
+53140	Aldosterone	Chemistry	Blood	51543
+53140	Aldosterone	Chemistry	Blood	51544
+53141	Alpha-1	Chemistry	Blood	51545
+53142	Alpha-1-antitrypsin	Chemistry	Blood	51546
+53143	Alpha-2	Chemistry	Blood	51547
+53144	ANCA Titer	Chemistry	Blood	51548
+53145	Anti-GBM Antibody	Chemistry	Blood	51549
+53146	Anti Hav	Chemistry	Blood	51550
+53147	Anti Hbc	Chemistry	Blood	51551
+53148	Anti Hbe	Chemistry	Blood	51552
+53149	Anti-hbs	Chemistry	Blood	51553
+53150	Anti Hbs	Chemistry	Blood	51554
+53151	Anti-la	Chemistry	Blood	51555
+
+=============
+MIMIC-IV v1.0
+=============
+MIMIC-IV v1.0 was released March 16, 2021.
+
+core module
+-----------
+
+admissions
+* A number (~1000, <1%) of erroneous hadm_id have been removed.
+
+patients
+* dod is now populated using the patient's deathtime from their latest hospitalization (reported in #71, thanks @jinjinzhou).
+* At the moment, out-of-hospital mortality is not captured by `dod`.
+
+transfers
+* Removed erroneous transfers included in the previous version.
+* transfer_id has been regenerated. transfer_id in MIMIC-IV v1.0 are not compatible with transfer_id from v0.4. We do not intend to change transfer_id when updating MIMIC-IV, but had to update it due to an error in its generation.
+* All hadm_id in transfers are also present in admissions and vice-versa (reported in #84, thanks @kokoko12305).
+
+icu module
+----------
+icustays
+* ICU stays were inappropriately assigned in the previous version due to an error in the preprocessing code. Previously, non-ICU ward transfers were included in the ICU stays, and certain ward stays were not treated as ICU stays (reported in #67, thanks @JHLiu7 and @stefanhgm). The assignment of stay_id has been regenerated.
+* The mapping between hospital transfers and ICU stays has been updated.
+* stay_id in MIMIC-IV v1.0 are not compatible with stay_id from v0.4. We do not intend to change stay_id when updating MIMIC-IV, but had to update it due to the error identified above.
+* The change in icustays has re-assigned values to new stay_id, as a result all tables have had their content changed (due to a change in stay_id), but the structure is unchanged.
+
+hosp module
+-----------
+hcpcsevents
+* Data has been added for a number of previously excluded hospitalizations.
+* The table now has a chartdate column, containing the date associated with the code. Every row is associated with a date.
+
+drgcodes
+* Data has been added for a number of previously excluded hospitalizations.
+* Duplicate DRG codes have been removed from the table.
+* Descriptions have been updated using the latest dictionaries made available from mass.gov and HCUP.
+
+diagnoses_icd, d_icd_diagnoses
+* Data has been added for a number of previously excluded hospitalizations (reported in #27, thanks @yugangjia).
+* The icd_code column is now trimmed and stored as a VARCHAR, i.e. codes no longer contain trailing whitespaces ('850 ' -> '850').
+* Missing ICD codes have been added to the dictionary. All ICD codes in the diagnoses_icd table have an associated reference in d_icd_diagnoses.
+
+labevents
+* The comments field has been updated, fixing a bug where comments longer than 4096 characters were truncated. Due to the deidentification, it's unlikely users will see much difference, as these comments will appear as ___.
+
+procedures_icd
+* Data has been added to procedures_icd for a number of previously excluded hospitalizations.
+* The table now has a chartdate column, containing the date associated with each billed procedure.
+* The icd_code column is now trimmed and stored as a VARCHAR, i.e. codes no longer contain trailing whitespaces ('850 ' -> '850').
+* Missing ICD codes have been added to the dictionary. All ICD codes in the procedures_icd table have an associated reference in d_icd_procedures.
+
+
+=============
+MIMIC-IV v0.4
+=============
+
+d_micro
+* This table has been removed
+microbiologyevents
+* Added the column spec_type_desc, test_name, org_name, and ab_name columns
+* These columns contain the textual name of the organism/antibiotic/test/specimen
+* Added the comments column: this column contains information about the test, and in some cases (e.g. viral load tests), contains the result
+
+=============
+MIMIC-IV v0.3
+=============
+* Fixed a bug in the timing between hosp and icu
+
+=============
+MIMIC-IV v0.2
+=============
+
+patients
+* anchor_year -> anchor_year_group
+* anchor_year_shifted -> anchor_year
+* See the patients table in the MIMIC online documentation for detail on these columns
+
+transfers
+* Deleted the los column
+
+emar
+* mar_id -> emar_id
+* emar_id is now a composite of subject_id and emar_seq, and has form “subject_id-emar_seq”
+* emar_seq column - a monotonically increasing integer starting with the first eMAR administration
+* Added poe_id and pharmacy_id columns for linking to those tables
+
+emar_detail
+* mar_id -> emar_id (changed as above)
+* Deleted the mar_detail_id column
+
+hcpcsevents
+* ticket_id_seq -> seq_num
+
+labevents
+* Many previously NULL values are now populated - these were removed originally due to deidentification
+* Added the comments column. This contains deidentified free-text comments with labs. PHI is replaced with three underscores (___). If an entire comment is ___, then the entire comment was scrubbed.
+
+microbiologyevents
+* stay_id column removed
+* spec_id -> micro_specimen_id
+* Added the poe and poe_detail tables
+* Documentation of provider orders for various treatments and other aspects of patient management
+* Added the prescriptions table
+* Documentation of medicine prescriptions via the provider order interface
+* Added the pharmacy table
+* Detailed information regarding prescriptions provided by the pharmacy including formulary dose, route, frequency, dose, and so on.
+
+inputevents
+* Fixed an error in the calculation of the amount column
+
+icustays
+* Re-derived stay_id - the new stay_id are distinct from the previous version.
